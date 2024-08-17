@@ -1,7 +1,6 @@
 services:
   nextjs_project:
-    build: thanak81/nextdocker
-    image: nextjs_swarm
+    image: thanak81/nextdocker
     deploy:
       replicas: 5
       restart_policy:
@@ -13,11 +12,9 @@ services:
     networks:
       - swarm_hw_network
   spring_project:
-    build: thanak81/springfinal
-    image: spring_swarm
+    image: thanak81/springfinal
     deploy:
       replicas: 5
-
       restart_policy:
         condition: on-failure
     ports:
