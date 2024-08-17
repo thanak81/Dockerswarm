@@ -1,7 +1,7 @@
 services:
   nextjs_project:
-    image: nextjs_swarm
     build: thanak81/nextdocker
+    image: nextjs_swarm
     deploy:
       replicas: 5
       restart_policy:
@@ -13,8 +13,8 @@ services:
     networks:
       - swarm_hw_network
   spring_project:
-    image: spring_swarm
     build: thanak81/springfinal
+    image: spring_swarm
     deploy:
       replicas: 5
 
