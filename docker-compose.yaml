@@ -1,0 +1,28 @@
+services:
+  nextjs_project:
+    image: nextjs_swarm
+    build: thanak81/nextdocker
+    deploy:
+      replicas: 5
+      restart_policy:
+        condition: on-failure
+    environment:
+      POSTGRES_PASSWORD: 123
+    ports:
+      - "3000:3000"
+    networks:
+      - swarm_hw_network
+  spring_project:
+    image: spring_swarm
+    build: thanak81/springfinal
+    deploy:
+      replicas: 5
+
+      restart_policy:
+        condition: on-failure
+    ports:
+    - "8080:8080"
+    networks:
+      - swarm_hw_network
+networks:
+  swarm_hw_network:
